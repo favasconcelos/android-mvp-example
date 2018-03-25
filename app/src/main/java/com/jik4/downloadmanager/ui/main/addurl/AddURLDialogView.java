@@ -14,6 +14,5 @@ public interface AddURLDialogView extends BaseDialogView {
 
     void sendDownloadIntent(Download download);
 
-    void addDownload(Download download, AddURLViewModel.OnDataInsertCallback onDataInsertCallback);
-
+    void addDownload(Download download);
 }

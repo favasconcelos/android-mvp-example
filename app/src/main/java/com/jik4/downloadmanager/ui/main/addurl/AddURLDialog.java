@@ -82,10 +82,10 @@ public class AddURLDialog extends BaseDialog implements AddURLDialogView, View.O
     }
 
     @Override
-    public void addDownload(Download download, AddURLViewModel.OnDataInsertCallback onDataInsertCallback) {
+    public void addDownload(Download download) {
         ViewModelProviders
                 .of(this)
-                .get(AddURLViewModel.class).insert(download, onDataInsertCallback);
+                .get(AddURLViewModel.class).insert(download, mPresenter);
     }
 
     @Override

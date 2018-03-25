@@ -10,7 +10,7 @@ import com.jik4.downloadmanager.ui.base.BasePresenterImpl;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AddURLDialogPresenterImpl<V extends AddURLDialogView> extends BasePresenterImpl<V> implements AddURLDialogPresenter<V> {
+public class AddURLDialogPresenterImpl<V extends AddURLDialogView> extends BasePresenterImpl<V> implements AddURLDialogPresenter<V>, AddURLViewModel.OnDataInsertCallback {
 
     @Override
     public void onSubmit(String url) {
@@ -22,14 +22,7 @@ public class AddURLDialogPresenterImpl<V extends AddURLDialogView> extends BaseP
             getView().showError(R.string.error_valid_url);
             return;
         }
-        Download download = new Download(url);
-        getView().addDownload(download, new AddURLViewModel.OnDataInsertCallback() {
-            @Override
-            public void onDataInserted(Download download) {
-                getView().sendDownloadIntent(download);
-                getView().dismissDialog();
-            }
-        });
+        getView().addDownload(new Download(url));
     }
 
     /**
@@ -42,5 +35,11 @@ public class AddURLDialogPresenterImpl<V extends AddURLDialogView> extends BaseP
         Pattern p = Patterns.WEB_URL;
         Matcher m = p.matcher(url.toLowerCase());
         return m.matches();
+    }
+
+    @Override
+    public void onDataInserted(Download download) {
+        getView().sendDownloadIntent(download);
+        getView().dismissDialog();
     }
 }
