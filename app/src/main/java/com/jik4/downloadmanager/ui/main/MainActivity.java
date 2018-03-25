@@ -1,6 +1,5 @@
 package com.jik4.downloadmanager.ui.main;
 
-import android.arch.lifecycle.LifecycleRegistry;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -35,7 +34,6 @@ public class MainActivity extends BaseActivity implements MainView {
         mPresenter.onDetach();
         super.onDestroy();
     }
-
 
     @Override
     public void showAddDownloadDialog() {

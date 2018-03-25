@@ -4,7 +4,6 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 
 import com.jik4.downloadmanager.database.AppDatabase;
 import com.jik4.downloadmanager.database.dao.DownloadDAO;
@@ -23,34 +22,29 @@ public class DownloadIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        Log.d("jika", "DownloadIntentService - onHandleIntent - START");
         Download download = intent.getParcelableExtra(BRConstants.EXTRA_DATA_DOWNLOAD);
-        Log.d("jika", download.toString());
         download.setStatus(Download.Status.ACTIVE);
         download.setStartedAt(new Date());
         sendIntent(BRConstants.BR_DOWNLOAD_START, download);
-        Log.d("jika", "Updated START: " + mDao.update(download));
         for (int i = 0; i < 100; i++) {
             if (i % 10 == 0) {
                 sendIntent(BRConstants.BR_DOWNLOAD_PROGRESS, download, i);
-                Log.d("jika", "Progress: " + i);
             }
             try {
+                // TODO: Remove this, only to "fake" download time
                 Thread.sleep(100);
             } catch (InterruptedException e) {
             }
         }
         download.setStatus(Download.Status.COMPLETED);
         download.setFinishedAt(new Date());
-        Log.d("jika", "Updated END: " + mDao.update(download));
         sendIntent(BRConstants.BR_DOWNLOAD_END, download);
-        Log.d("jika", "DownloadIntentService - onHandleIntent - END");
     }
 
     @Override
     public void onDestroy() {
-        mDao = null;
         super.onDestroy();
+        mDao = null;
     }
 
     private void sendIntent(String action, Download download, int progress) {
