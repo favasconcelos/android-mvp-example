@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Download Manager</string>
+    <string name="edt_url">URL</string>
+    <string name="btn_submit">Submit</string>
+    <string name="error_empty_url">URL cannot be empty.</string>
+    <string name="error_valid_url">URL is not valid.</string>
+    <string name="in_progress">In Progress</string>
+    <string name="completed">Completed</string>
+    <string name="empty" />
+</resources>
