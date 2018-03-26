@@ -22,7 +22,7 @@ import java.util.List;
 public class ActiveFragment extends BaseFragment {
 
     // Presenter
-    private ActiveFragmentPresenterImpl mPresenter;
+    private ActiveFragmentPresenter mPresenter;
     // View
     private RecyclerView mRecyclerView;
     // Adapter
@@ -37,7 +37,7 @@ public class ActiveFragment extends BaseFragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        mPresenter = new ActiveFragmentPresenterImpl();
+        mPresenter = new ActiveFragmentPresenter();
         super.onCreate(savedInstanceState);
     }
 

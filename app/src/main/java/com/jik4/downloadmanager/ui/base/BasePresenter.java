@@ -1,13 +1,23 @@
 package com.jik4.downloadmanager.ui.base;
 
 
-public interface BasePresenter<V extends BaseView> {
+public class BasePresenter<V extends BaseView> {
 
-    void onAttach(V mvpView);
+    private V view;
 
-    void onDetach();
+    public void onAttach(V view) {
+        this.view = view;
+    }
 
-    V getView();
+    public void onDetach() {
+        view = null;
+    }
 
-    boolean isViewAttached();
+    public V getView() {
+        return this.view;
+    }
+
+    public boolean isViewAttached() {
+        return this.view != null;
+    }
 }

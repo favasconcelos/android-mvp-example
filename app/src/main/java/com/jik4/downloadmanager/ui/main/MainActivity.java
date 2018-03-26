@@ -13,7 +13,7 @@ import com.jik4.downloadmanager.ui.main.addurl.AddURLDialog;
 public class MainActivity extends BaseActivity implements MainView {
 
     // Presenter
-    private MainPresenterImpl mPresenter;
+    private MainPresenter mPresenter;
     // Adapter
     private DownloadPagerAdapter mPagerAdapter;
     // Views
@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPresenter = new MainPresenterImpl();
+        mPresenter = new MainPresenter();
         mPresenter.onAttach(this);
     }
 

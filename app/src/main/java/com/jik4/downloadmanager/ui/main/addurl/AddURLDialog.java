@@ -23,7 +23,7 @@ public class AddURLDialog extends BaseDialog implements AddURLDialogView, View.O
     private static final String TAG = "AddURLDialog";
 
     // Presenter
-    private AddURLDialogPresenterImpl mPresenter;
+    private AddURLDialogPresenter mPresenter;
     // Views
     private EditText mUrlEditText;
     private View mSubmitButton;
@@ -40,7 +40,7 @@ public class AddURLDialog extends BaseDialog implements AddURLDialogView, View.O
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        mPresenter = new AddURLDialogPresenterImpl();
+        mPresenter = new AddURLDialogPresenter();
         mViewModel = ViewModelProviders.of(this).get(AddURLViewModel.class);
         return super.onCreateDialog(savedInstanceState);
     }
