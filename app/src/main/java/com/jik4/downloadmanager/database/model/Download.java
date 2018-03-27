@@ -35,11 +35,7 @@ public class Download implements Parcelable {
     @ColumnInfo(name = "finished_at")
     private Date finishedAt;
 
-    public Download() {
-    }
-
     public Download(String url) {
-        this();
         this.url = url;
         this.status = Status.INACTIVE;
         this.createdAt = new Date();

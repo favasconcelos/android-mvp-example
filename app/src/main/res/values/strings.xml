@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Download Manager</string>
+    <string name="download_service_description">Service do handle multiple downloads.</string>
+
     <string name="edt_url">URL</string>
     <string name="btn_submit">Submit</string>
+
     <string name="error_empty_url">URL cannot be empty.</string>
     <string name="error_valid_url">URL is not valid.</string>
+
     <string name="in_progress">In Progress</string>
     <string name="completed">Completed</string>
+
     <string name="empty" />
+    <string name="download_url"><![CDATA[https://images.unsplash.com/photo-1522001972566-da5ef7c371a9?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&dl=clement-percheron-607076-unsplash.jpg&s=7b87ba5429b76cf73362646347f4fbc2]]></string>
 </resources>

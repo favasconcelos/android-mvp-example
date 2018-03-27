@@ -1,8 +1,6 @@
 package com.jik4.downloadmanager.ui.base;
 
-
 public class BasePresenter<V extends BaseView> {
-
     private V view;
 
     public void onAttach(V view) {

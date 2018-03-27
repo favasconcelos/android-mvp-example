@@ -35,7 +35,7 @@ public class CompletedFragment extends BaseFragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        mPresenter = new CompletedFragmentPresenterImpl();
+        mPresenter = new CompletedFragmentPresenter();
         super.onCreate(savedInstanceState);
     }
 

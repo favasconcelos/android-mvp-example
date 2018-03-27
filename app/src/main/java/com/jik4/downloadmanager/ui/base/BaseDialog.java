@@ -55,10 +55,6 @@ public abstract class BaseDialog extends DialogFragment implements BaseDialogVie
         return dialog;
     }
 
-    public BaseActivity getBaseActivity() {
-        return mActivity;
-    }
-
     @Override
     public void dismissDialog(String tag) {
         dismiss();

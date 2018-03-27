@@ -16,6 +16,7 @@ import com.jik4.downloadmanager.R;
 import com.jik4.downloadmanager.database.model.Download;
 import com.jik4.downloadmanager.service.BRConstants;
 import com.jik4.downloadmanager.service.DownloadIntentService;
+import com.jik4.downloadmanager.service.DownloadService;
 import com.jik4.downloadmanager.ui.base.BaseDialog;
 
 public class AddURLDialog extends BaseDialog implements AddURLDialogView, View.OnClickListener {
@@ -76,7 +77,7 @@ public class AddURLDialog extends BaseDialog implements AddURLDialogView, View.O
 
     @Override
     public void sendDownloadIntent(Download download) {
-        Intent it = new Intent(getActivity(), DownloadIntentService.class);
+        Intent it = new Intent(getActivity(), DownloadService.class);
         it.putExtra(BRConstants.EXTRA_DATA_DOWNLOAD, download);
         getActivity().startService(it);
     }

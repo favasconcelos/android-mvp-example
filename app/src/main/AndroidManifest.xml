@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jik4.downloadmanager">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +24,8 @@
         </activity>
 
         <service
-            android:name=".service.DownloadIntentService"
+            android:name=".service.DownloadService"
+            android:description="@string/download_service_description"
             android:exported="false" />
 
     </application>

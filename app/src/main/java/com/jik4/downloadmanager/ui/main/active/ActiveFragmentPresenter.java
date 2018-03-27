@@ -1,6 +1,6 @@
 package com.jik4.downloadmanager.ui.main.active;
 
-import com.jik4.downloadmanager.ui.base.BasePresenterImpl;
+import com.jik4.downloadmanager.ui.base.BasePresenter;
 
-public class ActiveFragmentPresenter<V extends ActiveFragmentView> extends BasePresenterImpl<V> {
+class ActiveFragmentPresenter<V extends ActiveFragmentView> extends BasePresenter<V> {
 }

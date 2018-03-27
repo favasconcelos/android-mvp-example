@@ -37,9 +37,5 @@ public abstract class BaseFragment extends Fragment implements BaseView {
         super.onDetach();
     }
 
-    public BaseActivity getBaseActivity() {
-        return mActivity;
-    }
-
     protected abstract void setUp(View view);
 }

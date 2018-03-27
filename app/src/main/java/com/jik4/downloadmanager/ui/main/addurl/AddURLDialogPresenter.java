@@ -1,17 +1,15 @@
 package com.jik4.downloadmanager.ui.main.addurl;
 
-
 import android.util.Patterns;
 
 import com.jik4.downloadmanager.R;
 import com.jik4.downloadmanager.database.model.Download;
 import com.jik4.downloadmanager.ui.base.BasePresenter;
-import com.jik4.downloadmanager.ui.base.BasePresenterImpl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AddURLDialogPresenter<V extends AddURLDialogView> extends BasePresenter<V> AddURLViewModel.OnDataInsertCallback {
+public class AddURLDialogPresenter<V extends AddURLDialogView> extends BasePresenter<V> implements AddURLViewModel.OnDataInsertCallback {
 
     public void onSubmit(String url) {
         if (url == null || url.isEmpty()) {

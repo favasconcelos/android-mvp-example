@@ -1,6 +1,9 @@
 package com.jik4.downloadmanager.ui.main;
 
-public class MainPresenter<V extends MainView> extends BasePresenter<V>  {
+
+import com.jik4.downloadmanager.ui.base.BasePresenter;
+
+public class MainPresenter<V extends MainView> extends BasePresenter<V> {
 
     @Override
     public void onAttach(V view) {
